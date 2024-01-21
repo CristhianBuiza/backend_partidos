@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "web_configuracions",
+  "info": {
+    "singularName": "web-configuracion",
+    "pluralName": "web-configuracions",
+    "displayName": "Web Configuracion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

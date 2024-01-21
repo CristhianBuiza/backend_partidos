@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_video_videos",
+  "info": {
+    "displayName": "Opciones Video",
+    "icon": "play",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "text",
+      "required": false
+    },
+    "id_video": {
+      "type": "customField",
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "fast_url": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

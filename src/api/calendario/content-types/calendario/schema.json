@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "calendarios",
+  "info": {
+    "singularName": "calendario",
+    "pluralName": "calendarios",
+    "displayName": "Calendario",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "partido": {
+      "type": "string",
+      "required": true
+    },
+    "equipo_a": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "equipo_b": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "datetime": {
+      "type": "datetime"
+    },
+    "iframe": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::iframe.iframe"
+    }
+  }
+}

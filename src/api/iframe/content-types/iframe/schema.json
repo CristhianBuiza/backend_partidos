@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "iframes",
+  "info": {
+    "singularName": "iframe",
+    "pluralName": "iframes",
+    "displayName": "Iframe",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_frame": {
+      "type": "customField",
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "fast_iframe": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
