@@ -7,17 +7,19 @@
   },
   "options": {},
   "attributes": {
-    "url": {
-      "type": "text",
+    "titulo": {
+      "type": "string",
       "required": false
     },
     "id_video": {
       "type": "customField",
       "customField": "plugin::strapi-advanced-uuid.uuid"
     },
-    "fast_url": {
-      "type": "text",
-      "required": false
+    "video": {
+      "displayName": "opcion",
+      "type": "component",
+      "repeatable": true,
+      "component": "opcion.opcion"
     }
   }
 }

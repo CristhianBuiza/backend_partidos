@@ -690,14 +690,11 @@ export interface ApiCalendarioCalendario extends Schema.CollectionType {
   };
   attributes: {
     partido: Attribute.String & Attribute.Required;
-    equipo_a: Attribute.Media & Attribute.Required;
-    equipo_b: Attribute.Media & Attribute.Required;
+    equipo_a: Attribute.Media;
+    equipo_b: Attribute.Media;
     datetime: Attribute.DateTime;
-    iframe: Attribute.Relation<
-      'api::calendario.calendario',
-      'oneToOne',
-      'api::iframe.iframe'
-    >;
+    imagen_equipos: Attribute.Media;
+    opciones_video: Attribute.Component<'video.video'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -708,39 +705,6 @@ export interface ApiCalendarioCalendario extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::calendario.calendario',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiIframeIframe extends Schema.CollectionType {
-  collectionName: 'iframes';
-  info: {
-    singularName: 'iframe';
-    pluralName: 'iframes';
-    displayName: 'Iframe';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    id_frame: Attribute.UID &
-      Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'>;
-    fast_iframe: Attribute.Text;
-    title: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::iframe.iframe',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::iframe.iframe',
       'oneToOne',
       'admin::user'
     > &
@@ -758,13 +722,12 @@ export interface ApiInicioConfiguracionInicioConfiguracion
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::inicio-configuracion.inicio-configuracion',
       'oneToOne',
@@ -773,6 +736,38 @@ export interface ApiInicioConfiguracionInicioConfiguracion
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::inicio-configuracion.inicio-configuracion',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPublicidadPublicidad extends Schema.SingleType {
+  collectionName: 'publicidads';
+  info: {
+    singularName: 'publicidad';
+    pluralName: 'publicidads';
+    displayName: 'Publicidad';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    publicidad_derecha: Attribute.Text;
+    publicidad_arriba_mobile: Attribute.Text;
+    publicidad_abajo_mobile: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::publicidad.publicidad',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::publicidad.publicidad',
       'oneToOne',
       'admin::user'
     > &
@@ -827,8 +822,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::calendario.calendario': ApiCalendarioCalendario;
-      'api::iframe.iframe': ApiIframeIframe;
       'api::inicio-configuracion.inicio-configuracion': ApiInicioConfiguracionInicioConfiguracion;
+      'api::publicidad.publicidad': ApiPublicidadPublicidad;
       'api::web-configuracion.web-configuracion': ApiWebConfiguracionWebConfiguracion;
     }
   }

@@ -19,7 +19,7 @@
     "equipo_a": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
@@ -27,7 +27,7 @@
     "equipo_b": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
@@ -35,10 +35,19 @@
     "datetime": {
       "type": "datetime"
     },
-    "iframe": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::iframe.iframe"
+    "imagen_equipos": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "opciones_video": {
+      "type": "component",
+      "repeatable": false,
+      "component": "video.video",
+      "required": true
     }
   }
 }

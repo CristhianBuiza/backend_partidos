@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface OpcionOpcion extends Schema.Component {
+  collectionName: 'components_opcion_opcions';
+  info: {
+    displayName: 'opcion';
+    icon: 'expand';
+  };
+  attributes: {
+    url: Attribute.Text;
+  };
+}
+
 export interface SharedMetaSocial extends Schema.Component {
   collectionName: 'components_shared_meta_socials';
   info: {
@@ -59,16 +70,17 @@ export interface VideoVideo extends Schema.Component {
     description: '';
   };
   attributes: {
-    url: Attribute.Text;
+    titulo: Attribute.String;
     id_video: Attribute.UID &
       Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'>;
-    fast_url: Attribute.Text;
+    video: Attribute.Component<'opcion.opcion', true>;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'opcion.opcion': OpcionOpcion;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
       'video.video': VideoVideo;

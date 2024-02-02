@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_opcion_opcions",
+  "info": {
+    "displayName": "opcion",
+    "icon": "expand"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "text"
+    }
+  }
+}

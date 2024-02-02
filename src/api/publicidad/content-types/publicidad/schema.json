@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "publicidads",
+  "info": {
+    "singularName": "publicidad",
+    "pluralName": "publicidads",
+    "displayName": "Publicidad",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "publicidad_derecha": {
+      "type": "text"
+    },
+    "publicidad_arriba_mobile": {
+      "type": "text"
+    },
+    "publicidad_abajo_mobile": {
+      "type": "text"
+    }
+  }
+}
