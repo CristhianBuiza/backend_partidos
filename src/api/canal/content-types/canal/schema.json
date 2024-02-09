@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "canals",
+  "info": {
+    "singularName": "canal",
+    "pluralName": "canals",
+    "displayName": "Canal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "url": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

@@ -2,12 +2,18 @@
   "collectionName": "components_opcion_opcions",
   "info": {
     "displayName": "opcion",
-    "icon": "expand"
+    "icon": "expand",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "url": {
       "type": "text"
+    },
+    "canal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::canal.canal"
     }
   }
 }

@@ -712,6 +712,39 @@ export interface ApiCalendarioCalendario extends Schema.CollectionType {
   };
 }
 
+export interface ApiCanalCanal extends Schema.CollectionType {
+  collectionName: 'canals';
+  info: {
+    singularName: 'canal';
+    pluralName: 'canals';
+    displayName: 'Canal';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    titulo: Attribute.String & Attribute.Required;
+    imagen: Attribute.Media & Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'>;
+    url: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::canal.canal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::canal.canal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiInicioConfiguracionInicioConfiguracion
   extends Schema.SingleType {
   collectionName: 'inicio_configuracions';
@@ -822,6 +855,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::calendario.calendario': ApiCalendarioCalendario;
+      'api::canal.canal': ApiCanalCanal;
       'api::inicio-configuracion.inicio-configuracion': ApiInicioConfiguracionInicioConfiguracion;
       'api::publicidad.publicidad': ApiPublicidadPublicidad;
       'api::web-configuracion.web-configuracion': ApiWebConfiguracionWebConfiguracion;
